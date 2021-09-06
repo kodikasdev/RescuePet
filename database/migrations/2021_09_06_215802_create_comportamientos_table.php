@@ -15,6 +15,10 @@ class CreateComportamientosTable extends Migration
     {
         Schema::create('comportamientos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('mascota_id')->constrained('mascotas');
+            $table->string('Otros');
+            $table->string('Extraños');
+            $table->string('Ruidoso');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateLocalizacionesTable extends Migration
     {
         Schema::create('localizaciones', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('mascota_id')->constrained('mascotas');
+            $table->string('Estado');
+            $table->string('Municipio');
+            $table->string('Dirección');
             $table->timestamps();
         });
     }

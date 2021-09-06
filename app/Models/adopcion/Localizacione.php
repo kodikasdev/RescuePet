@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Localizacione extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'Estado',
+        'Municipio',
+        'Dirección'
+    ];
 }

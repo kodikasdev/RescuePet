@@ -15,6 +15,16 @@ class CreateMascotasTable extends Migration
     {
         Schema::create('mascotas', function (Blueprint $table) {
             $table->id();
+            $table->string('Nombre');
+            $table->string('Especie');
+            $table->string('Estado');
+            $table->string('Raza');
+            $table->string('Sexo');
+            $table->date('Nacimiento');
+            $table->string('Edad');
+            $table->float('Peso');
+            $table->string('Tamaño');
+            $table->string('Descripcion');
             $table->timestamps();
         });
     }
