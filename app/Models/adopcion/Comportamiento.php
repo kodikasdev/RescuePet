@@ -14,4 +14,9 @@ class Comportamiento extends Model
         'Extraños',
         'Ruidoso'
     ];
+
+    public function mascota()
+    {
+        return $this->belongsTo(Mascota::class);
+    }
 }

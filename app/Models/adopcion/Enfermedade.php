@@ -12,4 +12,9 @@ class Enfermedade extends Model
     protected $fillable = [
         'Nombre'
     ];
+
+    public function mascota()
+    {
+        return $this->belongsTo(Mascota::class);
+    }
 }

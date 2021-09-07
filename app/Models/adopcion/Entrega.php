@@ -12,4 +12,9 @@ class Entrega extends Model
     protected $fillable = [
         'Dato',
     ];
+
+    public function mascota()
+    {
+        return $this->belongsTo(Mascota::class);
+    }
 }

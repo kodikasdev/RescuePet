@@ -21,4 +21,24 @@ class Mascota extends Model
         'Tamaño',
         'Descripcion'
     ];
+
+    public function comportamiento()
+    {
+        return $this->hasOne(Comportamiento::class);
+    }
+
+    public function enfermedades()
+    {
+        return $this->hasMany(Enfermedade::class);
+    }
+
+    public function Entrega()
+    {
+        return $this->hasMany(Entrega::class);
+    }
+
+    public function localizacione()
+    {
+        return $this->hasOne(Localizacione::class);
+    }
 }

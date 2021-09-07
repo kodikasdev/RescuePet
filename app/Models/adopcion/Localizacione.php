@@ -14,4 +14,9 @@ class Localizacione extends Model
         'Municipio',
         'Dirección'
     ];
+
+    public function mascota()
+    {
+        return $this->belongsTo(Mascota::class);
+    }
 }
