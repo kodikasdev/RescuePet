@@ -12,7 +12,7 @@ class Mascota extends Model
     protected $fillable = [
         'Nombre',
         'Especie',
-        'Estado',
+        'Estatus',
         'Raza',
         'Sexo',
         'Nacimiento',
@@ -32,7 +32,7 @@ class Mascota extends Model
         return $this->hasMany(Enfermedade::class);
     }
 
-    public function Entrega()
+    public function entregas()
     {
         return $this->hasMany(Entrega::class);
     }

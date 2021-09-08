@@ -17,7 +17,7 @@ class CreateMascotasTable extends Migration
             $table->id();
             $table->string('Nombre');
             $table->string('Especie');
-            $table->string('Estado');
+            $table->string('Estatus')->default('En adopción');
             $table->string('Raza');
             $table->string('Sexo');
             $table->date('Nacimiento');

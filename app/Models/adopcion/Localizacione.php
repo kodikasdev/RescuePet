@@ -12,7 +12,7 @@ class Localizacione extends Model
     protected $fillable = [
         'Estado',
         'Municipio',
-        'Dirección'
+        'Direccion'
     ];
 
     public function mascota()

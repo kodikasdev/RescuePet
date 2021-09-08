@@ -18,7 +18,7 @@ class CreateLocalizacionesTable extends Migration
             $table->foreignId('mascota_id')->constrained('mascotas');
             $table->string('Estado');
             $table->string('Municipio');
-            $table->string('Dirección');
+            $table->string('Direccion');
             $table->timestamps();
         });
     }
