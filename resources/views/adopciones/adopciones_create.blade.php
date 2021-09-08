@@ -105,7 +105,7 @@
                     </div>
                 </div>
 
-                {!! Form::submit('GUARDAR', ['class' => 'btn-red']) !!}
+                {!! Form::submit('GUARDAR', ['class' => 'btn btn-blue']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

@@ -10,7 +10,7 @@ class Enfermedade extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Nombre'
+        'Enfermedad'
     ];
 
     public function mascota()
