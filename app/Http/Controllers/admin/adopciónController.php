@@ -16,7 +16,7 @@ class adopciónController extends Controller
      */
     public function index()
     {
-        //
+        return view('adopciones.adopciones_index');
     }
 
     /**
@@ -41,12 +41,15 @@ class adopciónController extends Controller
             'Cachorro' => 'Cachorro',
             'Joven' => 'Joven',
             'Adulto' => 'Adulto',
+            'Senior' => 'Senior',
         ];
 
         $tamaños = [
             'Mini' => 'Mini',
+            'Pequeño' => 'Pequeño',
             'Mediano' => 'Mediano',
             'Grande' => 'Grande',
+            'Gigante' => 'Gigante',
         ];
 
         $estados = [
@@ -54,41 +57,78 @@ class adopciónController extends Controller
         ];
 
         $municipios = [
+            'Calakmul' => 'Calakmul',
             'Calkini' => 'Calkini',
             'Campeche' => 'Campeche',
             'Candelaria' => 'Candelaria',
+            'Carmen' => 'Carmen',
             'Champotón' => 'Champotón',
-            'Escarcega' => 'Escarcega',
+            'Dzitbalché' => 'Dzitbalché',
+            'Escárcega' => 'Escárcega',
+            'Hecelchakán' => 'Hecelchakán',
+            'Hopelchén' => 'Hopelchén',
             'Palizada' => 'Palizada',
-        ];
-
-        $OOtros = [
-            'Desconocido' => 'Desconocido',
-        ];
-
-        $OExtraños = [
-            'Desconocido' => 'Desconocido',
-        ];
-
-        $ORuidoso = [
-            'Desconocido' => 'Desconocido',
+            'Seyvaplaya' => 'Seyvaplaya',
+            'Tenabo' => 'Tenabo',
         ];
 
         $entregas = [
             'Vacunado' => 'Vacunado',
             'Desparasitados' => 'Desparasitados',
             'Sano' => 'Sano',
-            'Esterilizado' => 'Esterilizado'
+            'Esterilizado' => 'Esterilizado',
+            'Identificado' => 'Identificado',
+            'Microchip' => 'Microchip',
         ];
 
+        $OOtros = [
+            'Desconocido' => 'Desconocido',
+            'Bueno solo con machos' => 'Bueno solo con machos',
+            'Bueno solo con hembras' => 'Bueno solo con hembras',
+            'Bueno con otros de su especie' => 'Bueno con otros de su especie',
+        ];
+
+        $OExtraños = [
+            'Desconocido' => 'Desconocido',
+            'Cauteloso con extraños' => 'Cauteloso con extraños',
+            'Amigable con extraños' => 'Amigable con extraños',
+            'Protector con extraños' => 'Protector con extraños',
+            'Agresivo con extraños' => 'Agresivo con extraños',
+        ];
+
+        $ORuidoso = [
+            'Desconocido' => 'Desconocido',
+            'No ladro, no maúllo...' => 'No ladro, no maúllo...',
+            'A veces ladro, maúllo...' => 'A veces ladro, maúllo...',
+            'Ladro, maúllo... mucho' => 'Ladro, maúllo.. mucho',
+        ];
+
+
         $aptitudes = [
-            'Bueno con gatos',
-            'Bueno con otros animales',
-            'Bueno con niños'
+            'Bueno con gatos' => 'Bueno con gatos',
+            'Bueno con otros animales' => 'Bueno con otros animales',
+            'Bueno con niños' => 'Bueno con niños',
+            'Bueno en el coche' => 'Bueno en el coche',
+            'Bueno en casa' => 'Bueno en casa',
+            'Protector' => 'Protector',
+            'Escapista' => 'Escapista',
+            'Me gusta pasear' => 'Me gusta pasear',
+            'Timido' => 'Timido',
+            'Independiente' => 'Independiente',
+            'Me gusta estár en compañia' => 'Me gusta estár en compañia',
+            'Cariñoso' => 'Cariñoso',
+            'Juguetón' => 'Juguetón',
+            'Dormilón' => 'Dormilón',
+            'Buen temperamento' => 'Buen temperamento',
         ];
 
         $enfermedades = [
-            'Desconocido' => 'Desconocido',
+            'Tengo alergias' => 'Tengo alergias',
+            'Estoy en tratamiento médico' => 'Estoy en tratamiento médico',
+            'Soy positivo en Leishmania' => 'Soy positivo en Leishmania',
+            'Soy positivo en Inmunodeficiencia Felina' => 'Soy positivo en Inmunodeficiencia Felina',
+            'Soy positivo en Leucemia' => 'Soy positivo en Leucemia ',
+            'Necesito licencia PPP' => 'Necesito licencia PPP',
         ];
 
         return  view('adopciones.adopciones_create', compact('especies', 'sexos', 'edades', 'tamaños', 'OOtros', 'OExtraños', 'ORuidoso', 'estados', 'municipios', 'entregas', 'aptitudes', 'enfermedades'));

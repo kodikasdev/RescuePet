@@ -21,13 +21,16 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen">
+
             @livewire('navigation-menu')
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            <div class="bg-gray-100">
+                <main>
+                    {{ $slot }}
+                </main>
+            </div>
         </div>
 
         @stack('modals')

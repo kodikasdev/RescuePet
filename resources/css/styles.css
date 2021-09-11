@@ -1,3 +1,11 @@
+h3{
+    @apply text-gray-700 text-lg font-bold mb-2;
+}
+
+h2{
+    @apply text-gray-700 text-xl font-bold mb-2;
+}
+
 .form-group{
     @apply mb-6;
 }
@@ -10,14 +18,43 @@
     @apply mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md;
 }
 
-.btn {
-    @apply font-bold py-2 px-4 rounded;
+.form-checkbox{
+    @apply mb-6;
 }
 
-.btn-blue {
-    @apply bg-blue-500 text-white;
+.form-checkbox label{
+    @apply text-gray-700 text-sm font-bold mb-2 rounded border-gray-300;
 }
 
-.btn-blue:hover {
-    @apply bg-blue-700;
+.form-checkbox input{
+    @apply rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
 }
+
+.long-text{
+    @apply mb-6;
+}
+
+.long-text h3{
+    @apply text-gray-800 text-lg font-bold mb-2;
+}
+
+.long-text p{
+    @apply text-black text-base text-justify font-semibold tracking-wide leading-relaxed mb-2;
+}
+
+.description{
+    @apply text-gray-700 text-2xl text-center font-bold mb-2 py-5;
+}
+
+.card{
+    @apply bg-white overflow-hidden shadow-xl sm:rounded-lg hover:ring-2 hover:ring-blue-600;
+}
+
+.card-description{
+    @apply block text-gray-700 text-sm font-bold mb-2 rounded border-gray-300 py-2 px-3;
+}
+
+.card-footer{
+    @apply bg-green-500 text-white text-center font-black p-3;
+}
+

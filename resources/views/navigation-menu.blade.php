@@ -1,22 +1,34 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-gray-900">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('home.index') }}">
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link href="{{ route('home.index') }}" :active="request()->routeIs('home.index')">
+                        {{ __('Inicio') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('adopcion.create') }}" :active="request()->routeIs('adopción.create')">
+                    <x-jet-nav-link href="{{ route('nosotros.index') }}" :active="request()->routeIs('nosotros.index')">
+                        {{ __('Nosotros') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('adopcion.create') }}" :active="request()->routeIs('adopcion.create')">
                         {{ __('Dar en Adopción') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('adopcion.index') }}" :active="request()->routeIs('adopcion.index')">
+                        {{ __('En Adopción') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('perdido.create') }}" :active="request()->routeIs('perdido.create')">
+                        {{ __('Reportar perdido') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('perdido.index') }}" :active="request()->routeIs('perdido.index')">
+                        {{ __('Perdidos') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -77,7 +89,13 @@
                         </x-jet-dropdown>
                     </div>
                 @else
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                    <x-jet-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                        {{ __('Iniciar sesión') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                        {{ __('Registrate') }}
+                    </x-jet-nav-link>
+
                 @endauth
             </div>
 
@@ -96,7 +114,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-jet-responsive-nav-link href="{{ route('home.index') }}" :active="request()->routeIs('home.index')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>

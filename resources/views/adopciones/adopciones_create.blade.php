@@ -63,7 +63,7 @@
                     <h3>3. Se entrega</h3>
                     <div class="grid grid-cols-6 gap-6">
                         @foreach ($entregas as $item)
-                        <div class="col-span-6 lg:col-span-2">
+                        <div class="col-span-6 lg:col-span-2 form-checkbox">
                             {!! Form::checkbox('Entregas[]', $item, null) !!}
                             {!! Form::label(null, $item, ['form-group']) !!}
                         </div>
@@ -85,7 +85,7 @@
                             {!! Form::select('Ruidoso', $ORuidoso, null, ['required', 'placeholder' => 'Selecciona una opción']) !!}
                         </div>
                         @foreach ($aptitudes as $aptitud)
-                            <div class="col-span-6 md:col-span-2">
+                            <div class="col-span-6 md:col-span-2 form-checkbox">
                                 <label>
                                     {!! Form::checkbox('Dato', $aptitud, null, null) !!}
                                     {{$aptitud}}
@@ -96,16 +96,22 @@
 
                     <h3>5. Enfermedades</h3>
                     <div class="grid grid-cols-6 gap-6">
-                        @foreach ($entregas as $item)
-                        <div class="col-span-6 lg:col-span-1">
+                        @foreach ($enfermedades as $item)
+                        <div class="col-span-6 lg:col-span-2 form-checkbox">
                             {!! Form::checkbox('Enfermedades[]', $item, null) !!}
                             {!! Form::label(null, $item, null) !!}
                         </div>
                         @endforeach
                     </div>
+
+                    <div class="py-5">
+                        <x-jet-button type="Submit">
+                            Guardar
+                        </x-jet-button>
+                    </div>
+
                 </div>
 
-                {!! Form::submit('GUARDAR', ['class' => 'btn btn-blue']) !!}
                 {!! Form::close() !!}
             </div>
         </div>
