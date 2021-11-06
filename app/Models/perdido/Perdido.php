@@ -15,6 +15,10 @@ class Perdido extends Model
         'Sexo',
         'Peso',
         'Tamaño',
-        'Descripcion'
+        'Descripcion',
+        'Sarna',
+        'Heridas',
+        'Sano'
     ];
+
 }
