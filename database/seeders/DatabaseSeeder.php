@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
-        Mascota::factory(20)->create();
-        // \App\Models\User::factory(10)->create();
+        $this->call(EntregaSeeder::class);
+        $this->call(EnfermedadeSeeder::class);
+        $this->call(AptitudeSeeder::class);
     }
 }

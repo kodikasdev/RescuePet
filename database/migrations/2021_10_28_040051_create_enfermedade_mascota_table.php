@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEnfermedadesTable extends Migration
+class CreateEnfermedadeMascotaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateEnfermedadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('enfermedades', function (Blueprint $table) {
+        Schema::create('enfermedade_mascota', function (Blueprint $table) {
             $table->id();
 
-            $table->string('Dato');
+            $table->foreignId('enfermedade_id')->constrained('enfermedades');
+            $table->foreignId('mascota_id')->constrained('mascotas');
 
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ class CreateEnfermedadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enfermedades');
+        Schema::dropIfExists('enfermedade_mascota');
     }
 }

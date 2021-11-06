@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\adopcion\Mascota;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class perdidosController extends Controller
+class adopcionController extends Controller
 {
 
     public function files(Mascota $mascota, Request $request)

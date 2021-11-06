@@ -10,11 +10,11 @@ class Enfermedade extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Enfermedad'
+        'Dato'
     ];
 
-    public function mascota()
+    public function mascotas()
     {
-        return $this->belongsTo(Mascota::class);
+        return $this->belongsToMany(Mascota::class);
     }
 }

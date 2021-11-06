@@ -15,8 +15,9 @@ class CreateEntregasTable extends Migration
     {
         Schema::create('entregas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('mascota_id')->constrained('mascotas');
+
             $table->string('Dato');
+
             $table->timestamps();
         });
     }
