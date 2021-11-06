@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\perdido;
+namespace Database\Factories\Perdido;
 
 use App\Models\perdido\Perdido;
 use Illuminate\Database\Eloquent\Factories\Factory;
