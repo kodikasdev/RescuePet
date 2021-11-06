@@ -2,6 +2,7 @@
 
 namespace App\Models\perdido;
 
+use App\Models\adopcion\Localizacione;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,5 +21,9 @@ class Perdido extends Model
         'Heridas',
         'Sano'
     ];
+    public function localizacione()
+    {
+        return $this->belongsTo(Localizacione::class,'mascota_id');
+    }
 
 }
