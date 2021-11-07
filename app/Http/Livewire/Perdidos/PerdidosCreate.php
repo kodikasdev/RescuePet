@@ -57,9 +57,8 @@ class PerdidosCreate extends Component
     public function store()
     {
         $mascota = Perdido::create([
-            'Nombre' => $this->Nombre,
-            'Estatus'=> $this->Estatus,
             'Especie' => $this->Especie,
+            'Estatus'=> $this->Estatus,
             'Sexo' => $this->Sexo,
             'Peso' => $this->Peso,
             'Tamaño' => $this->Tamaño,
