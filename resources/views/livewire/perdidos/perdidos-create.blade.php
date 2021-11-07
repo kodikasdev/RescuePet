@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group col-span-6 md:col-span-6 lg:col-span-3">
                             {!! Form::label(null, 'Herido', null) !!}
-                            {!! Form::text('Herido', null, ['wire:model' => 'Herido', 'required']) !!}
+                            {!! Form::text('Herido', null, ['wire:model' => 'Heridas', 'required']) !!}
                         </div>
                         <div class="form-group col-span-6 md:col-span-6 lg:col-span-3">
                             {!! Form::label(null, 'Sano', null) !!}
