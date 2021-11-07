@@ -21,6 +21,8 @@ class Perdido extends Model
         'Heridas',
         'Sano'
     ];
+
+
     public function localizacione()
     {
         return $this->belongsTo(Localizacione::class,'mascota_id');
