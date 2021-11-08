@@ -75,7 +75,7 @@ class PerdidosCreate extends Component
             'Direccion' => $this->Direccion,
         ]);
 
-        return redirect()->route('perdido.edit', $mascota);
+        return redirect()->route('perdido.create');
     }
     public function render()
     {
