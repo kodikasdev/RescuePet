@@ -25,7 +25,7 @@ class Perdido extends Model
 
     public function localizacione()
     {
-        return $this->hasOne(Localizacione::class,'mascota_id');
+        return $this->hasOne(Localizacione::class,'perdido_id');
     }
 
 }
