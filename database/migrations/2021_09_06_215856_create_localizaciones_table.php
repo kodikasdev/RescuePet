@@ -15,12 +15,14 @@ class CreateLocalizacionesTable extends Migration
     {
         Schema::create('localizaciones', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('mascota_id')->constrained('mascotas');
+            $table->unsignedBigInteger('mascota_id')->nullable()->unsigned();
+            $table->unsignedBigInteger('perdido_id')->nullable()->unsigned();
             $table->string('Estado');
             $table->string('Municipio');
             $table->string('Direccion');
-
+            //Llaves Foráneas
+            $table->foreign('mascota_id')->references('id')->on('mascotas');
+            $table->foreign('perdido_id')->references('id')->on('perdidos');
             $table->timestamps();
         });
     }
