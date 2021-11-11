@@ -11,6 +11,9 @@ class Mascota extends Model
 {
     use HasFactory;
 
+    const Adoptado = 1;
+    const Publicado = 2;
+
     protected $fillable = [
         'Nombre',
         'Especie',

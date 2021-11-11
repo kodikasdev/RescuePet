@@ -3,12 +3,16 @@
 namespace App\Models\perdido;
 
 use App\Models\adopcion\Localizacione;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Perdido extends Model
 {
     use HasFactory;
+
+    const Adoptado = 1;
+    const Publicado = 2;
 
     protected $fillable = [
         'Especie',
@@ -28,4 +32,9 @@ class Perdido extends Model
         return $this->hasOne(Localizacione::class,'perdido_id');
     }
 
+    //Relación uno a muchos polimorfica
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }

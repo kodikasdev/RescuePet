@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\adopcion\Mascota;
+use App\Models\perdido\Perdido;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class perdidosController extends Controller
 {
 
-    public function files(Mascota $mascota, Request $request)
+    public function files(Perdido $mascota, Request $request)
     {
         $request->validate([
             'file' => 'required|image'

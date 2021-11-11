@@ -8,8 +8,6 @@
             </form>
         </div>
 
-
-
         @if ($mascota->images)
             <section class="bg-white shadow-xl rounded-lg p-5 dark:bg-gray-800">
                 <h1 class="text-2xl text-center font-semibold mb-2 dark:text-gray-300">
@@ -97,7 +95,8 @@
                     <div class="grid grid-cols-6 gap-6">
                         @foreach ($entregas as $entrega)
                         <div class="col-span-6 lg:col-span-2 form-checkbox">
-                            {!! Form::checkbox('Entregas[]', $entrega->id, null, ['wire:model' => 'entrega.Dato']) !!}
+                            {!! Form::checkbox($name, $value, $checked, [$options]) !!}
+                            {!! Form::checkbox('Entregas[]', $entrega->id, null, ['wire:model' => 'Dato']) !!}
                             {!! Form::label(null, $entrega->Dato, ['form-group']) !!}
                         </div>
                         @endforeach

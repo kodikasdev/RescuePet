@@ -16,7 +16,6 @@ Route::get('adopcion/create', AdopcionesCreate::class)->name('adopcion.create');
 Route::get('adopcion/{mascota}/edit', AdopcionesEdit::class)->name('adopcion.edit');
 Route::post('adopcion/{mascota}/files', [adopcionController::class, 'files'])->name('adopcion.files');
 
-Route::resource('perdidos', perdidosController::class)->only('create', 'store', 'index')->names('perdido');
 Route::get('perdidos', PerdidosIndex::class)->name('perdido.index');
 Route::get('perdidos/create', PerdidosCreate::class)->name('perdido.create');
 Route::get('perdidos/{mascota}/edit', PerdidosEdit::class)->name('perdido.edit');

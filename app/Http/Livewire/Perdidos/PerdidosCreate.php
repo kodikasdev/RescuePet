@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class PerdidosCreate extends Component
 {
-    public $especies, $sexos, $tamaños, $estados, $municipios, $entregas, $OOtros, $aptitudes, $enfermedades,$Estatus,$Sarna,$Heridas,$Sano;
+    public $especies, $sexos, $tamaños, $estados, $municipios, $entregas, $OOtros, $aptitudes, $enfermedades, $Estatus, $Sarna, $Heridas, $Sano, $op;
 
     public $Nombre, $Especie, $Raza, $Sexo, $Nacimiento, $Edad, $Peso, $Tamaño, $Descripcion, $Estado, $Municipio, $Direccion, $Entregas=[], $Otros, $Ruidoso, $Aptitudes=[];
 
@@ -52,13 +52,19 @@ class PerdidosCreate extends Component
             'Seybaplaya' => 'Seybaplaya',
             'Tenabo' => 'Tenabo',
         ];
+
+        $this->op = [
+            'Si' => 'Si',
+            'No' => 'No',
+            'Desconocido' => 'Desconocido'
+        ];
+
     }
 
     public function store()
     {
         $mascota = Perdido::create([
             'Especie' => $this->Especie,
-            'Estatus'=> $this->Estatus,
             'Sexo' => $this->Sexo,
             'Peso' => $this->Peso,
             'Tamaño' => $this->Tamaño,
@@ -68,15 +74,15 @@ class PerdidosCreate extends Component
             'Sano'=> $this->Sano
         ]);
 
-
         $mascota->localizacione()->create([
             'Estado' => $this->Estado,
             'Municipio' => $this->Municipio,
             'Direccion' => $this->Direccion,
         ]);
 
-        return redirect()->route('perdido.create');
+        return redirect()->route('perdido.edit', $mascota);
     }
+
     public function render()
     {
         return view('livewire.perdidos.perdidos-create');

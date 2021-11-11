@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\adopcion\Mascota;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +18,7 @@ class CreateMascotasTable extends Migration
             $table->id();
             $table->string('Nombre');
             $table->string('Especie');
-            $table->string('Estatus')->default('En adopción');
+            $table->enum('Estatus', [Mascota::Adoptado, Mascota::Publicado])->default(Mascota::Adoptado);
             $table->string('Raza');
             $table->string('Sexo');
             $table->date('Nacimiento');

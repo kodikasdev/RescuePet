@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\perdido\Perdido;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ class CreatePerdidosTable extends Migration
         Schema::create('perdidos', function (Blueprint $table) {
             $table->id();
             $table->string('Especie');
-            $table->string('Estatus')->default('Rescatado');
+            $table->enum('Estatus', [Perdido::Adoptado, Perdido::Publicado])->default(Perdido::Adoptado);
             $table->string('Sexo');
             $table->float('Peso');
             $table->string('Tamaño');
