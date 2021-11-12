@@ -16,6 +16,7 @@ class CreatePerdidosTable extends Migration
     {
         Schema::create('perdidos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable()->unsigned();
             $table->string('Especie');
             $table->enum('Estatus', [Perdido::Adoptado, Perdido::Publicado])->default(Perdido::Adoptado);
             $table->string('Sexo');
@@ -25,6 +26,7 @@ class CreatePerdidosTable extends Migration
             $table->string('Sarna');
             $table->string('Heridas');
             $table->string('Sano');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
