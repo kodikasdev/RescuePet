@@ -8,6 +8,25 @@
             </form>
 
         </div>
+        @if ($mascota->images)
+            <section class="bg-white shadow-xl rounded-lg p-5 dark:bg-gray-800">
+                <h1 class="text-2xl text-center font-semibold mb-2 dark:text-gray-300">
+                    Imagenes de la mascota
+                </h1>
+                <ul class="flex flex-wrap">
+                    @foreach ($mascota->images as $image)
+                        <li class="relative" wire:key="image-{{$image->id}}">
+                            <img class="w-32 h-20 object-cover" src="{{Storage::url($image->url)}}" alt="">
+                            <x-jet-danger-button class="absolute right-2 top-2"
+                                wire:click="$emit('destroy', {{$image->id}})">
+                                x
+                            </x-jet-danger-button>
+                        </li>
+                    @endforeach
+                </ul>
+            </section>
+        @endif
+
         <div>
             {!! Form::open() !!}
                 @csrf
@@ -43,6 +62,10 @@
                             {!! Form::label(null, 'Sano', null) !!}
                             {!! Form::select('op',$op,null,['wire:model' => 'mascota.Sano', 'required']) !!}
                         </div>
+                        <div class="form-group col-span-6 md:col-span-2 lg:col-span-1">
+                            {!! Form::label(null, 'Sano', null) !!}
+                            {!! Form::select('op',$estatus,null,['wire:model' => 'mascota.Estatus', 'required']) !!}
+                        </div>
                         <div class="form-group col-span-6 md:col-span-6 lg:col-span-3">
                             {!! Form::label(null, 'Descripción', null) !!}
                             {!! Form::textarea('Descripcion',null,['wire:model' => 'mascota.Descripcion']) !!}
@@ -77,24 +100,7 @@
             {!! Form::close() !!}
         </div>
 
-        @if ($mascota->images)
-            <section class="bg-white shadow-xl rounded-lg p-5 dark:bg-gray-800">
-                <h1 class="text-2xl text-center font-semibold mb-2 dark:text-gray-300">
-                    Imagenes de la mascota
-                </h1>
-                <ul class="flex flex-wrap">
-                    @foreach ($mascota->images as $image)
-                        <li class="relative" wire:key="image-{{$image->id}}">
-                            <img class="w-32 h-20 object-cover" src="{{Storage::url($image->url)}}" alt="">
-                            <x-jet-danger-button class="absolute right-2 top-2"
-                                wire:click="$emit('destroy', {{$image->id}})">
-                                x
-                            </x-jet-danger-button>
-                        </li>
-                    @endforeach
-                </ul>
-            </section>
-        @endif
+
     </div>
 
 

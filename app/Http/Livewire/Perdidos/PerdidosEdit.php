@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Perdidos;
 
+use App\Models\adopcion\Mascota;
 use App\Models\Image;
 use App\Models\perdido\Perdido;
 use Illuminate\Support\Facades\Storage;
@@ -10,7 +11,7 @@ use Livewire\Component;
 class PerdidosEdit extends Component
 {
     public $mascota;
-    public $especies,$sexos,$tamaños,$estados,$municipios,$op,$direccion;
+    public $especies,$sexos,$tamaños,$estados,$municipios,$op,$direccion, $estatus = [Mascota::Publicado => 'Publicado', Mascota::Adoptado => 'Adoptado'];
     protected $listeners = ['render' => 'render', 'deleteImage', 'refreshMascota'];
 
 
@@ -58,6 +59,7 @@ class PerdidosEdit extends Component
         'mascota.Sarna' => 'required',
         'mascota.Heridas' => 'required',
         'mascota.Sano' => 'required',
+        'mascota.Estatus' => 'required',
         'mascota.localizacione.Estado' => 'required',
         'mascota.localizacione.Municipio' => 'required',
         'mascota.localizacione.Direccion' => 'string'
