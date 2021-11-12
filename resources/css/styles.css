@@ -58,3 +58,18 @@ h2{
     @apply bg-green-500 text-white text-center font-black p-3;
 }
 
+.tables{
+    @apply min-w-full divide-y divide-gray-200 text-xs;
+}
+
+.tables thead{
+    @apply bg-white shadow-md;
+}
+
+.tables th{
+    @apply px-3 py-3 text-left font-medium text-black uppercase tracking-wider;
+}
+
+.tables td{
+    @apply px-3 py-4 whitespace-nowrap;
+}

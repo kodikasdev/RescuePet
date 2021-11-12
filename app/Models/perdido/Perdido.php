@@ -29,7 +29,7 @@ class Perdido extends Model
 
     public function localizacione()
     {
-        return $this->hasOne(Localizacione::class,'perdido_id');
+        return $this->hasOne(Localizacione::class);
     }
 
     //Relación uno a muchos polimorfica

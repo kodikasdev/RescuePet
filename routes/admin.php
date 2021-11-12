@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\adopcionController;
 use App\Http\Controllers\admin\perdidosController;
+use App\Http\Livewire\Admin\Perdidos\IndexPerdidos;
 use App\Http\Livewire\Adopciones\AdopcionesCreate;
 use App\Http\Livewire\Adopciones\AdopcionesEdit;
 use App\Http\Livewire\Adopciones\AdopcionesIndex;
@@ -20,4 +21,9 @@ Route::get('perdidos', PerdidosIndex::class)->name('perdido.index');
 Route::get('perdidos/create', PerdidosCreate::class)->name('perdido.create');
 Route::get('perdidos/{mascota}/edit', PerdidosEdit::class)->name('perdido.edit');
 Route::post('perdidos/{mascota}/files', [perdidosController::class, 'files'])->name('perdido.files');
+Route::get('perdidos/admin', IndexPerdidos::class)->name('perdidos.admin');
+
+
+
+
 

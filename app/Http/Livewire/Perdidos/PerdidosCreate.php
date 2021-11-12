@@ -7,9 +7,9 @@ use Livewire\Component;
 
 class PerdidosCreate extends Component
 {
-    public $especies, $sexos, $tamaños, $estados, $municipios, $entregas, $OOtros, $aptitudes, $enfermedades, $Estatus, $Sarna, $Heridas, $Sano, $op;
+    public $especies, $sexos, $tamaños, $estados, $municipios, $op;
 
-    public $Nombre, $Especie, $Raza, $Sexo, $Nacimiento, $Edad, $Peso, $Tamaño, $Descripcion, $Estado, $Municipio, $Direccion, $Entregas=[], $Otros, $Ruidoso, $Aptitudes=[];
+    public $Especie, $Sexo, $Peso, $Tamaño, $Sarna, $Heridas, $Sano, $Descripcion, $Estado, $Municipio, $Direccion;
 
     public function mount()
     {
@@ -23,7 +23,6 @@ class PerdidosCreate extends Component
             'Macho' => 'Macho',
             'Hembra' => 'Hembra'
         ];
-
 
         $this->tamaños = [
             'Mini' => 'Mini',
@@ -68,10 +67,10 @@ class PerdidosCreate extends Component
             'Sexo' => $this->Sexo,
             'Peso' => $this->Peso,
             'Tamaño' => $this->Tamaño,
-            'Descripcion' => $this->Descripcion,
             'Sarna'=> $this->Sarna,
             'Heridas'=> $this->Heridas,
-            'Sano'=> $this->Sano
+            'Sano'=> $this->Sano,
+            'Descripcion' => $this->Descripcion,
         ]);
 
         $mascota->localizacione()->create([
