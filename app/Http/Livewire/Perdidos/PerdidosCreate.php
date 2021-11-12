@@ -3,13 +3,15 @@
 namespace App\Http\Livewire\Perdidos;
 
 use App\Models\perdido\Perdido;
+use App\Models\User;
 use Livewire\Component;
-
+use Auth;
 class PerdidosCreate extends Component
 {
     public $especies, $sexos, $tamaños, $estados, $municipios, $op;
 
     public $Especie, $Sexo, $Peso, $Tamaño, $Sarna, $Heridas, $Sano, $Descripcion, $Estado, $Municipio, $Direccion;
+
 
     public function mount()
     {
@@ -62,7 +64,7 @@ class PerdidosCreate extends Component
 
     public function store()
     {
-        $mascota = Perdido::create([
+        $mascota=auth()->user()->perdido()->create([
             'Especie' => $this->Especie,
             'Sexo' => $this->Sexo,
             'Peso' => $this->Peso,
@@ -79,7 +81,7 @@ class PerdidosCreate extends Component
             'Direccion' => $this->Direccion,
         ]);
 
-        return redirect()->route('perdido.edit', $mascota);
+        redirect()->route('perdido.edit',$mascota);
     }
 
     public function render()

@@ -106,10 +106,11 @@
                 </tbody>
             </table>
 
+            <!---
             <div class="p-3">
-                {{$mascotas->links()}}
+                {{--$mascotas->links()---}}
             </div>
-
+            !!-->
         </x-tables>
     </div>
 </div>
