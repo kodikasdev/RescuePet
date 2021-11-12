@@ -20,6 +20,7 @@ Route::post('adopcion/{mascota}/files', [adopcionController::class, 'files'])->n
 Route::get('perdidos', PerdidosIndex::class)->name('perdido.index');
 Route::get('perdidos/create', PerdidosCreate::class)->name('perdido.create');
 Route::get('perdidos/{mascota}/edit', PerdidosEdit::class)->name('perdido.edit');
+Route::post('perdidos/{mascota}/edit', PerdidosEdit::class,)->name('perdido.edit');
 Route::post('perdidos/{mascota}/files', [perdidosController::class, 'files'])->name('perdido.files');
 Route::get('perdidos/admin', IndexPerdidos::class)->name('perdidos.admin');
 
