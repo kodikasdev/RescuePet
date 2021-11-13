@@ -64,7 +64,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function perdido()
+    public function perdidos()
     {
         return $this->hasMany(Perdido::class);
     }

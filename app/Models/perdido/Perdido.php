@@ -37,6 +37,8 @@ class Perdido extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
+    //Relación uno a muchos inversa
     public function user(){
         return $this->belongsTo(User::class);
     }
