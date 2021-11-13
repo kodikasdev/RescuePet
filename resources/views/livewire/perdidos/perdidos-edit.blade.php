@@ -62,10 +62,12 @@
                             {!! Form::label(null, 'Sano', null) !!}
                             {!! Form::select('op',$op,null,['wire:model' => 'mascota.Sano', 'required']) !!}
                         </div>
+                        @can('perdidos.all')
                         <div class="form-group col-span-6 md:col-span-2 lg:col-span-1">
-                            {!! Form::label(null, 'Sano', null) !!}
+                            {!! Form::label(null, 'Estatus', null) !!}
                             {!! Form::select('op',$estatus,null,['wire:model' => 'mascota.Estatus', 'required']) !!}
                         </div>
+                        @endcan
                         <div class="form-group col-span-6 md:col-span-6 lg:col-span-3">
                             {!! Form::label(null, 'Descripción', null) !!}
                             {!! Form::textarea('Descripcion',null,['wire:model' => 'mascota.Descripcion']) !!}
