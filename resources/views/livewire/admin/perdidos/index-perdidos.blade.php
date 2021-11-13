@@ -91,7 +91,7 @@
                             @endswitch
                         </td>
                         <td>
-                            <x-btn-secondary href="" >
+                            <x-btn-secondary href="{{route('perdido.edit', $mascota->id)}}" >
                                 <i class="fas fa-edit"></i>
                             </x-btn-secondary>
                             <x-btn-secondary href="#" >

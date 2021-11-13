@@ -2,10 +2,7 @@
 
 namespace App\Http\Livewire\Perdidos;
 
-use App\Models\perdido\Perdido;
-use App\Models\User;
 use Livewire\Component;
-use Auth;
 class PerdidosCreate extends Component
 {
     public $especies, $sexos, $tamaños, $estados, $municipios, $op;
@@ -64,7 +61,9 @@ class PerdidosCreate extends Component
 
     public function store()
     {
-        $mascota=auth()->user()->perdido()->create([
+
+
+        $mascota = auth()->user()->perdidos()->create([
             'Especie' => $this->Especie,
             'Sexo' => $this->Sexo,
             'Peso' => $this->Peso,
