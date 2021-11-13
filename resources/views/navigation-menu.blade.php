@@ -18,17 +18,22 @@
                     <x-jet-nav-link href="{{ route('nosotros.index') }}" :active="request()->routeIs('nosotros.index')">
                         {{ __('Nosotros') }}
                     </x-jet-nav-link>
+                    <!--
                     <x-jet-nav-link href="{{ route('adopcion.create') }}" :active="request()->routeIs('adopcion.create')">
                         {{ __('Dar en Adopción') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('adopcion.index') }}" :active="request()->routeIs('adopcion.index')">
                         {{ __('En Adopción') }}
                     </x-jet-nav-link>
+                    -->
                     <x-jet-nav-link href="{{ route('perdido.create') }}" :active="request()->routeIs('perdido.create')">
-                        {{ __('Reportar perdido') }}
+                        {{ __('Reportar') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('perdido.index') }}" :active="request()->routeIs('perdido.index')">
                         {{ __('Perdidos') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('perdidos.admin') }}" :active="request()->routeIs('perdidos.admin')">
+                        {{ __('Tus publicaciones') }}
                     </x-jet-nav-link>
                 </div>
             </div>
