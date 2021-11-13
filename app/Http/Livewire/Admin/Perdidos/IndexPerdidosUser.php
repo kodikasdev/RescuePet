@@ -13,7 +13,7 @@ class IndexPerdidosUser extends Component
 
     public function render()
     {
-        $mascotas = Perdido::all()->where('user_id','==', Auth::user()->id);
+        $mascotas = Perdido::where('user_id', Auth::user()->id)->get();
 
         return view('livewire.admin.perdidos.index-perdidos', compact('mascotas'));
     }
