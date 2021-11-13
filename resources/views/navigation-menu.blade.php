@@ -35,6 +35,11 @@
                     <x-jet-nav-link href="{{ route('perdidos.admin') }}" :active="request()->routeIs('perdidos.admin')">
                         {{ __('Tus publicaciones') }}
                     </x-jet-nav-link>
+                    @can('perdidos.all')
+                        <x-jet-nav-link href="{{ route('perdidos.all') }}" :active="request()->routeIs('perdidos.all')">
+                            {{ __('Administrador') }}
+                        </x-jet-nav-link>
+                    @endcan
                 </div>
             </div>
 

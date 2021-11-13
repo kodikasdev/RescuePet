@@ -25,7 +25,7 @@ Route::post('perdidos/{mascota}/edit', PerdidosEdit::class,)->name('perdido.edit
 Route::post('perdidos/{mascota}/files', [perdidosController::class, 'files'])->name('perdido.files');
 
 Route::get('perdidos/admin', IndexPerdidosUser::class)->name('perdidos.admin');
-Route::get('perdidos/admin/all', IndexPerdidos::class)->name('perdidos.all');
+Route::get('perdidos/admin/all', IndexPerdidos::class)->middleware('can:perdidos.all')->name('perdidos.all');
 
 
 
